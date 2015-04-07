@@ -1,0 +1,17 @@
+Requirements
+
+As a user, I want my tasks synced with a persistent backend.
+As a user, I want to see my active tasks in a list as my default view.
+As a user, I want to hide completed tasks and tasks older than seven days from my main task views automatically.
+As a user, I want to view expired and completed tasks in a view separate from my active tasks.
+As a user, I want to submit new tasks with a description, priority level and three states: expired, completed or active.
+As a user, I want to mark tasks complete.
+
+
+Optional requirements for advanced features:
+
+As a user, I want a mobile-friendly interface.
+As a user, I want to add touch gestures.
+As a user, I want to require authentication to access my task list.
+As a user, I want to have multiple lists for different types of tasks.
+
