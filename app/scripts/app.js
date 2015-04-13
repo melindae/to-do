@@ -1,56 +1,64 @@
-var toDo = angular.module('ToDo', ['ui.router', 'firebase']);
+var doThings = angular.module('doThings', ['ui.router', 'firebase']);
 
+doThings.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $locationProvider) {
 
-mouse hover = time since entry
+  $stateProvider.state('home', {
+    url: '',
+    controller:'doController',
+    templateUrl: '/templates/home.html'
+  });
 
-mouse click = edit 
+  // $stateProvider.state('new', {
+  //   url: '/newtask',
+  //   //controller:'doController',
+  //   templateUrl: '/templates/newtask.html'
+  // });
 
-var taskTemplate =  {
+  $stateProvider.state('old', {
+    url: '/oldtask',
+    controller:'doController',
+    templateUrl: '/templates/oldtask.html',
+   });
 
-  *task: 'do something',
-  *priority: '4 options',
-  *time-stamp: 'enter time',
-  *taskComplete: 'y/n',
+}]);
+
+doThings.controller('doController', function($scope, $firebaseArray) {
+  var fireRef = new Firebase("https://blinding-fire-8984.firebaseio.com/tasks");
   
-  // taskCompleteStamp 'some date',
-  // type: 'self populating',
-  // deadline: 'day or days',
-  // actionDay: 'specific day',
-  // repeat: 'y, n, week, plus',
-  // extra notes: 'blah blah',
+  var done = "active";
+  
+  $scope.tasks = $firebaseArray(fireRef);
 
-}
+  $scope.addtask = function() {
+    $scope.tasks.$add( {
+        'timein': 3,   // '3' is placeholder. Generate 'timein' timestamp
+        'name': $scope.name,
+        'priority': $scope.priority,
+        'done': "active",  // done defaults to 'active' here
 
+    });  
 
-
-
-
-  var albumPicasso = {
-   name: 'The Colors',
-   artist: 'Pablo Picasso',
-   label: 'Cubism',
-   year: '1881',
-   albumArtUrl: '/images/album-placeholder.png',
-
-   songs: [
-       { name: 'Blue', length: '4:26' },
-       { name: 'Green', length: '3:14' },
-       { name: 'Red', length: '5:01' },
-       { name: 'Pink', length: '3:21'},
-       { name: 'Magenta', length: '2:15'}
-     ]
   };
 
-  <div ng-repeat="album in albums" class="collection-album-container col-md-2">
-    <div class="collection-album-info caption">
-      <p>
-        <a class="album-name" ui-sref="album"> {{ album.name }} </a>
-          <br/>
-        <a ui-sref="album"> {{ album.artist }} </a>
-          <br/>
-           {{ album.songs.length }} songs
-          <br/>
-      </p>
-    </div>
-  </div>
+});
 
+// variables:
+// timein = firebase generated TIMESTAMP
+// name = task name (string)
+// priority = priority (h/m/l)
+// done = task complete toggle (active/expired/complete)
+// -active will be default value at entry
+// -user toggling the "done" button will set value to complete
+// -systen will do a check at undetermined interval to see if 
+//   task timestamp has age of 7 days. then will mark "expired" if "active"
+
+
+// Firebase.ServerValue.TIMESTAMP
+// To get the actual server time from Firebase for a write of some kind, 
+// you would first write to Firebase 
+// (i.e. ref.child('updated_at').set(Firebase.ServerValue.TIMESTAMP); 
+// and have listeners for that data 
+// (ref.on('value', function(snapshot) { // snapshot.val().updated_at });). 
+// There is no way to get the server time synchronously from Firebase, 
+// but the local time + server offset time (provided immediately whenever 
+// you write to Firebase using the ServerValue) is a good approximation.

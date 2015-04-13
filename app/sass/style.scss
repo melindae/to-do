@@ -1,6 +1,89 @@
 body {
- background-color: green;
+  background-color: #FFF5F0;
+  font-family: 'Roboto';
+ 
  h1 {
-  color: pink;
+  color: #526614;
+  font-family: 'Rock Salt', cursive;
+  font-size: 30pt;
+  text-align: center
  }
 }
+
+.nav-buttons{
+  margin-left:auto; 
+  margin-right:auto;
+
+  a {
+  border-radius: 11px;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 5px 10px 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  }
+  
+  .homeTaskButton {
+  background: #CC6600;
+  border: solid 1px #934A00
+  }
+  
+/*  .newTaskButton {
+  background: #8FB224;
+  border: solid 1px #526614;
+  }*/
+
+  .oldTaskButton {
+  background: #526614;
+  border: solid 1px #39470E
+  }
+}
+
+.new-list table {
+  border: 1px solid grey;
+  width: 500px;
+  padding: 5px 10px 10px 10px;
+  background-color: #CCFF33;
+  margin: 1px;
+  margin-left:auto; 
+  margin-right:auto;
+  margin-top: 15px;
+}
+
+.new-list  td {
+  padding: 15px;
+  background-color: #FF9966;
+}
+
+.new-list input[type="text"] {
+  width: 100%;
+}
+
+
+.prime-list table {
+  border: 1px solid grey;
+  width: 500px;
+  padding: 5px 10px 10px 10px;
+  background-color: #CCFF33;
+  margin: 25px;
+  margin-left:auto; 
+  margin-right:auto;
+  margin-top: 25px;
+}
+
+.prime-list  td {
+  padding: 15px;
+  background-color: #FF9966;
+}
+
+
+/*input[type='radio'] {
+
+  width:20px;
+  height:20px;
+  border:1px solid darkgray;
+  border-radius:50%;
+  outline:none;
+  box-shadow:0 0 5px 0px gray inset;
+}
+*/
