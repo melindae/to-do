@@ -1,0 +1,37 @@
+<div class='new-list'>
+  <table>
+    <tr>
+      <th>New Thing</th>
+      <th>Importance</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td><input type="text" placeholder="New Thing to do"ng-model="name"></td>
+      <td><input type="text" placeholder="high/med/low" ng-model="priority"></td>
+      <td><button ng-click="addtask()">Add Thing</button></td>
+    </tr>
+  </table>
+</div>      
+
+<div class='prime-list'>
+  <table>
+    <tr>
+      <th>Thing to do</th>
+      <th>Importance</th>
+      <th>Done?</th>
+    </tr>
+    <tr ng-repeat="task in tasks">
+      <td>{{task.name}}</td>
+      <td>{{task.priority}}</td>
+      <td>{{task.done}}</td>
+    </tr>
+  </table>
+</div>
+
+          <!-- 
+      data attached to each task:
+
+      timestamp: hidden from user
+      task name:
+      priority: high, med, low
+      State: active, expired, complete -->
