@@ -20,18 +20,10 @@
       <th>Importance</th>
       <th>Done?</th>
     </tr>
-    <tr ng-repeat="task in tasks">
+    <tr ng-repeat="task in tasks" ng-hide="hidetask(task.timein)">
       <td>{{task.name}}</td>
       <td>{{task.priority}}</td>
       <td>{{task.done}}</td>
     </tr>
   </table>
 </div>
-
-          <!-- 
-      data attached to each task:
-
-      timestamp: hidden from user
-      task name:
-      priority: high, med, low
-      State: active, expired, complete -->
