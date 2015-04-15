@@ -1,24 +1,24 @@
 var doThings = angular.module('doThings', ['ui.router', 'firebase']);
 
-doThings.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $locationProvider) {
+doThings.config(['$stateProvider', '$locationProvider', function($stateProvider, $locationProvider) {
+$locationProvider.html5Mode(true);
 
-  $stateProvider.state('home', {
+  $stateProvider
+  .state('home', {
     url: '',
     controller:'doController',
-    templateUrl: '/templates/home.html'
-  });
-
-  // $stateProvider.state('new', {
-  //   url: '/newtask',
-  //   //controller:'doController',
-  //   templateUrl: '/templates/newtask.html'
-  // });
-
-  $stateProvider.state('old', {
+    templateUrl: 'templates/home.html'
+  })
+  .state('old', {
     url: '/oldtask',
+    controller:'oldController',
+    templateUrl: 'templates/oldtask.html',
+   })
+  .state('otherwise', {
+    url: '*path',
     controller:'doController',
-    templateUrl: '/templates/oldtask.html',
-   });
+    templateUrl: 'templates/home.html'
+  });
 
 }]);
 
@@ -28,32 +28,52 @@ doThings.controller('doController', function($scope, $firebaseArray) {
   
   $scope.tasks = $firebaseArray(fireRef);
 
+  $scope.thing = { name: "" };
+
+  // document.addEventListener( 
+  //   'touchstart', 
+  //    function( event ){
+  //     console.log('target', event.target);
+  //     console.log( event );
+  //   }
+  // );
+
   $scope.addtask = function() {
     $scope.tasks.$add( {
         'timein': fireTime,
-        'name': $scope.name,
+        'name': $scope.thing.name,
         'priority': $scope.priority,
         'done': "active",  //'done' defaults to 'active' here
-    });  
+    });
+
+    $scope.thing.name = "";
   };
 
-  $scope.hidetask = function(taskTime) {
+  $scope.hidetask = function(taskTime, taskDone) {
+    var oneWeekAgo = new Date().getTime()-1000*60*60*24*7, 
+        oneDayAgo = new Date().getTime()-1000*60*60*24, //for testing
+        oneHourAgo = new Date().getTime()-1000*60*60; //for testing
 
-    var oneWeekAgo = new Date().getTime()-1000*60*60*24*7; 
-    var oneDayAgo = new Date().getTime()-1000*60*60*24; //for testing
-    var oneHourAgo = new Date().getTime()-1000*60*60; //for testing
-
-    if (oneDayAgo > taskTime)
+    if ((oneDayAgo > taskTime) || (taskDone == 'complete'))
       return true
    };
 
 });
 
+doThings.controller('oldController', function($scope, $firebaseArray) {
+  var fireRef = new Firebase("https://blinding-fire-8984.firebaseio.com/tasks");
+  var fireTime = Firebase.ServerValue.TIMESTAMP;
+  
+  $scope.tasks = $firebaseArray(fireRef);
 
-// variables:
-// timein = firebase generated TIMESTAMP
-// name = task name (string)
-// priority = priority (h/m/l)
-// done = active/complete
-// -active will be default value at entry
-// -user toggling the "done" button will set value to complete
+  $scope.hidetask = function(taskTime, taskDone) {
+    var oneWeekAgo = new Date().getTime()-1000*60*60*24*7; 
+    var oneDayAgo = new Date().getTime()-1000*60*60*24; //for testing
+    var oneHourAgo = new Date().getTime()-1000*60*60; //for testing
+
+    if ((oneDayAgo > taskTime) || (taskDone == 'complete'))
+      return true
+   };
+
+});
+    

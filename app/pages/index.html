@@ -2,6 +2,7 @@
 <html ng-app="doThings">
   <head>
     <meta charset="UTF-8">
+    <base href="/">
     <title>To-Do</title>
     <link rel="stylesheet" href="/css/style.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -15,21 +16,35 @@
   </head>
   
   <body>
-
     <h1>Do the Things!</h1>
-
     <div>
       <table class="nav-buttons">
         <tr>
           <td><a ui-sref="home" class="homeTaskButton">The List</a></td>
-<!--           <td><a ui-sref='new' class='newTaskButton'>New Things</a></td> -->
           <td><a ui-sref='old' class='oldTaskButton'>Old Things</a></td>
         </tr>
       </table>
     </div>
-
     <div ui-view></div>
-
   </body>
-
 </html>
+
+<!-- 
+TO-DO:
+- page buttons should show which page is live
+- ** or just show one (the opposite page)
+- consolidate CSS
+- font drops being clipped in input box
+- make inputs required for submission
+- task box word wrap
+
+Extras:
+- task type / multiple lists
+- mobile friendly
+- touch gestures
+touch events vs. mouse events
+.on() or .addEventListener()
+touchstart vs. mousedown
+pointer events (Microsoft only)
+- authentication
+ -->

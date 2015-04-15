@@ -1,1 +1,20 @@
-<h1>Many things have been done!!!</h1>
+<!-- <h3>Many things have been done!!!</h3> -->
+
+<div class='prime-list'>
+  <table>
+    <tr>
+      <th>Thing done!</th>
+      <th>Importance</th>
+      <th>Done?</th>
+    </tr>
+
+<!--  note: 'done column is for testing purposes and will be replaced 
+      with a 'done' toggle in the final home view -->
+    <tr ng-repeat="task in tasks" ng-show="hidetask(task.timein, task.done)">
+      <td class="tableNam">{{task.name}}</td>
+      <td class="tablePri">{{task.priority}}</td>
+      <td class="tableDone">{{task.done}}</td>
+    </tr>
+  </table>
+</div>
+
