@@ -1,29 +1,32 @@
-<div class='new-list'>
-  <table>
-    <tr>
-      <th>New Thing</th>
-      <th>Importance</th>
-      <th></th>
-    </tr>
-    <tr>
-      <td><input type="text" placeholder="New Thing to do"ng-model="name"></td>
-      <td><input type="text" placeholder="high/med/low" ng-model="priority"></td>
-      <td><button ng-click="addtask()">Add Thing</button></td>
-    </tr>
-  </table>
-</div>      
 
+<!--  note: 'done column is for testing purposes and will be replaced 
+      with a 'done' toggle in the final home view -->
 <div class='prime-list'>
   <table>
+    
     <tr>
       <th>Thing to do</th>
       <th>Importance</th>
       <th>Done?</th>
     </tr>
-    <tr ng-repeat="task in tasks" ng-hide="hidetask(task.timein)">
-      <td>{{task.name}}</td>
-      <td>{{task.priority}}</td>
-      <td>{{task.done}}</td>
+    
+    <tr>
+      <td><input type="text" placeholder="Add a new Thing to do" ng-model="thing.name"></td>
+      <td>
+        <select ng-model="priority" placeholder="?">
+          <option value="High">High</option>
+          <option value="Med">Med</option>
+          <option value="Low">Low</option>
+        </select>
+      </td>
+      <td><button ng-click="addtask()">Add!</button></td>
     </tr>
+    
+    <tr ng-repeat="task in tasks" ng-hide="hidetask(task.timein, task.done)">
+      <td class="tableNam">{{task.name}}</td>
+      <td class="tablePri">{{task.priority}}</td>
+      <td class="tableDone">{{task.done}}</td>
+    </tr>
+ 
   </table>
 </div>

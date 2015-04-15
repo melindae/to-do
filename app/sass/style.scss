@@ -1,3 +1,12 @@
+/*
+colors used:
+background: #FFF5F0 pale orange
+title text: #526614 dark green
+button: #CC6600 med/dk orange
+button: #526614 med /dk green
+table background: #CCFF33 bright green
+table center: #FF9966 peach
+*/
 body {
   background-color: #FFF5F0;
   font-family: 'Roboto';
@@ -8,6 +17,13 @@ body {
   font-size: 30pt;
   text-align: center
  }
+
+/*  h3 {
+  color: #526614;
+  font-family: 'Rock Salt', cursive;
+  font-size: 20pt;
+  text-align: center
+ }*/
 }
 
 .nav-buttons{
@@ -28,37 +44,43 @@ body {
   border: solid 1px #934A00
   }
   
-/*  .newTaskButton {
-  background: #8FB224;
-  border: solid 1px #526614;
-  }*/
-
   .oldTaskButton {
   background: #526614;
   border: solid 1px #39470E
   }
 }
 
-.new-list table {
-  border: 1px solid grey;
-  width: 500px;
-  padding: 5px 10px 10px 10px;
-  background-color: #CCFF33;
-  margin: 1px;
-  margin-left:auto; 
-  margin-right:auto;
-  margin-top: 15px;
-}
-
-.new-list  td {
-  padding: 15px;
-  background-color: #FF9966;
-}
-
-.new-list input[type="text"] {
+.prime-list input[type="text"] {
   width: 100%;
+  background: #CCFF33;
+  border: 1px solid #999; 
+  height:30px;
+  border-radius: 8px;
+}
+ 
+::-webkit-input-placeholder {
+ font-size: 14px;
+ color: black;
+ padding-left: 10px;
+ color: #7A991F;
+
 }
 
+.prime-list button {
+  width: 100%;
+  background: #CCFF33;
+  border: 1px solid #999; 
+  height:100%;
+  border-radius: 8px;
+}
+
+.prime-list select {
+  width: 100%;
+  background: #CCFF33;
+  border: 1px solid #999; 
+  height:100%;
+  border-radius: 8px;
+}
 
 .prime-list table {
   border: 1px solid grey;
@@ -72,9 +94,20 @@ body {
 }
 
 .prime-list  td {
-  padding: 15px;
+  padding: 10px;
   background-color: #FF9966;
+
 }
+
+.prime-list .tablePri {
+  text-align: center;
+}
+
+
+
+ 
+
+
 
 
 /*input[type='radio'] {
