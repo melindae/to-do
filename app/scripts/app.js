@@ -28,7 +28,7 @@ doThings.controller('doController', function($scope, $firebaseArray) {
   
   $scope.tasks = $firebaseArray(fireRef);
 
-  $scope.thing = { name: "" };
+    $scope.thing = { name: "" };
 
   // document.addEventListener( 
   //   'touchstart', 
@@ -56,8 +56,7 @@ doThings.controller('doController', function($scope, $firebaseArray) {
 
     if ((oneDayAgo > taskTime) || (taskDone == 'complete'))
       return true
-   };
-
+  };
 });
 
 doThings.controller('oldController', function($scope, $firebaseArray) {
@@ -67,13 +66,43 @@ doThings.controller('oldController', function($scope, $firebaseArray) {
   $scope.tasks = $firebaseArray(fireRef);
 
   $scope.hidetask = function(taskTime, taskDone) {
-    var oneWeekAgo = new Date().getTime()-1000*60*60*24*7; 
-    var oneDayAgo = new Date().getTime()-1000*60*60*24; //for testing
-    var oneHourAgo = new Date().getTime()-1000*60*60; //for testing
+    var oneWeekAgo = new Date().getTime()-1000*60*60*24*7, 
+        oneDayAgo = new Date().getTime()-1000*60*60*24, //for testing
+        oneHourAgo = new Date().getTime()-1000*60*60; //for testing
 
     if ((oneDayAgo > taskTime) || (taskDone == 'complete'))
       return true
    };
-
 });
     
+doThings.directive('taskComplete', function() {
+   return {
+    restrict: 'A',
+    template: "<button class='tableDone fa fa-check-square-o' ng-click='taskDone(task)'></button>",
+
+    link: function($scope, element, attrs) {
+      $scope.taskDone = function(task) {
+        var taskIndex = $scope.tasks.indexOf(task);
+        $scope.tasks[taskIndex].done = "complete";
+        $scope.tasks.$save(taskIndex).then(function(fireRef) {
+          fireRef.key() === $scope.tasks[taskIndex].$id;
+        });
+      }
+    }
+  }
+});
+
+doThings.directive('taskDelete', function() {
+   return {
+    restrict: 'A',
+    template: "<button class='tableDone fa fa-minus-square-o' ng-click='taskDelete(task)'></button>",
+    link: function($scope, element, attrs) {
+      $scope.taskDelete = function(task) {
+        var taskIndex = $scope.tasks.indexOf(task);
+        $scope.tasks.$remove(taskIndex).then(function(fireRef) {
+          fireRef.key() === $scope.tasks[taskIndex].$id;
+        });
+      }
+    }
+  }
+});

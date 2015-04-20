@@ -1,19 +1,22 @@
-<!-- <h3>Many things have been done!!!</h3> -->
+<table class="nav-buttons">
+  <tr>
+    <td><a ui-sref="home" class="homeTaskButton">See the new Things</a></td>
+  </tr>
+</table>
 
-<div class='prime-list'>
+<div class='main-list'>
   <table>
     <tr>
-      <th>Thing done!</th>
-      <th>Importance</th>
-      <th>Done?</th>
+      <th >Thing done!</th>
+      <th >Value</th>
+      <th >Done?</th>
+      <th >Clear</th>
     </tr>
-
-<!--  note: 'done column is for testing purposes and will be replaced 
-      with a 'done' toggle in the final home view -->
     <tr ng-repeat="task in tasks" ng-show="hidetask(task.timein, task.done)">
       <td class="tableNam">{{task.name}}</td>
-      <td class="tablePri">{{task.priority}}</td>
-      <td class="tableDone">{{task.done}}</td>
+      <td>{{task.priority}}</td>
+      <td>{{task.done}}</td>
+      <td task-delete></td>
     </tr>
   </table>
 </div>
