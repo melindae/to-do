@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
+    , "postinstall": "./node_modules/.bin/grunt"
   },
    "dependencies": {
     "hapi": "^7.5.0",
