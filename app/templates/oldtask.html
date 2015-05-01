@@ -1,8 +1,10 @@
-<table class="nav-buttons">
-  <tr>
-    <td><a ui-sref="home" class="homeTaskButton">See the new Things</a></td>
-  </tr>
-</table>
+<div class="nav-buttons">
+    <a ui-sref="home" class="homeTaskButton">See the new Things</a>
+    <input type="radio" class='typeButton' ng-model="taskSee" value="Work" />See Work
+    <input type="radio" class='typeButton' ng-model="taskSee" value="Home" />See Home
+    <input type="radio" class='typeButton' ng-model="taskSee" value="Play" />See Play
+    <input type="radio" class='typeButton' ng-model="taskSee" value="All" />See All
+</div>
 
 <div class='main-list'>
   <table>
@@ -13,7 +15,7 @@
       <th>Done?</th>
       <th>Clear</th>
     </tr>
-    <tr ng-repeat="task in tasks" ng-show="hidetask(task.timein, task.done)">
+    <tr ng-repeat="task in tasks" ng-show="showtask(task.timein, task.done, task.type)">
       <td class="tableName">{{task.name}}</td>
       <td> {{task.type}} </td>
       <td> {{task.priority}} </td>

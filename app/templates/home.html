@@ -1,23 +1,20 @@
-
-<table class="nav-buttons">
-  <tr>
-    <td><a ui-sref='old' class='oldTaskButton'>See the old Things</a></td>
-  </tr>
-</table>
+<div class="nav-buttons">
+    <a ui-sref='old' class='oldTaskButton'>See the old Things</a>
+    <input type="radio" class='typeButton' ng-model="taskSee" value="Work" />See Work
+    <input type="radio" class='typeButton' ng-model="taskSee" value="Home" />See Home
+    <input type="radio" class='typeButton' ng-model="taskSee" value="Play" />See Play
+    <input type="radio" class='typeButton' ng-model="taskSee" value="All" />See All
+</div>
 
 <div class='main-list'>
   <table>
-    
     <tr>
       <th>Thing to do</th>
       <th>Type</th>
       <th>Value</th>
-      
     </tr>
-    
     <tr>
       <td><input type="text" placeholder="Add a new Thing to do" ng-model="thing.name"></td>
-
       <td class="typeColumn">
         <select ng-model="type">
           <option value="">???</option>          
@@ -26,7 +23,6 @@
           <option value="Play">Play</option>
         </select>
       </td>
-
       <td class="valueColumn">
         <select ng-model="priority">
           <option value="">???</option>          
@@ -37,13 +33,11 @@
       </td>
       <td class="iconColumn" ><button class="addButton fa fa-plus-square-o" ng-click="addtask()"></button></td>
     </tr>
-    
-    <tr ng-repeat="task in tasks" ng-hide="hidetask(task.timein, task.done)">
+    <tr ng-repeat="task in tasks" ng-show="showtask(task.timein, task.done, task.type)">
       <td class="tableName"> {{task.name}} </td>
       <td> {{task.type}} </td>
       <td> {{task.priority}} </td>
       <td task-complete></td>
     </tr>
- 
   </table>
 </div>
