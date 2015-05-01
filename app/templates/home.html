@@ -9,13 +9,24 @@
   <table>
     
     <tr>
-      <th class='eee'>Thing to do</th>
-      <th class='fff'>Value</th>
+      <th>Thing to do</th>
+      <th>Type</th>
+      <th>Value</th>
       
     </tr>
     
     <tr>
       <td><input type="text" placeholder="Add a new Thing to do" ng-model="thing.name"></td>
+
+      <td class="typeColumn">
+        <select ng-model="type">
+          <option value="">???</option>          
+          <option value="Home">Home</option>
+          <option value="Work">Work</option>
+          <option value="Play">Play</option>
+        </select>
+      </td>
+
       <td class="valueColumn">
         <select ng-model="priority">
           <option value="">???</option>          
@@ -28,7 +39,8 @@
     </tr>
     
     <tr ng-repeat="task in tasks" ng-hide="hidetask(task.timein, task.done)">
-      <td class="tableNam"> {{task.name}} </td>
+      <td class="tableName"> {{task.name}} </td>
+      <td> {{task.type}} </td>
       <td> {{task.priority}} </td>
       <td task-complete></td>
     </tr>
