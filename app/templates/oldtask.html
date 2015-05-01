@@ -7,15 +7,17 @@
 <div class='main-list'>
   <table>
     <tr>
-      <th >Thing done!</th>
-      <th >Value</th>
-      <th >Done?</th>
-      <th >Clear</th>
+      <th>Thing done!</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Done?</th>
+      <th>Clear</th>
     </tr>
     <tr ng-repeat="task in tasks" ng-show="hidetask(task.timein, task.done)">
-      <td class="tableNam">{{task.name}}</td>
-      <td>{{task.priority}}</td>
-      <td>{{task.done}}</td>
+      <td class="tableName">{{task.name}}</td>
+      <td> {{task.type}} </td>
+      <td> {{task.priority}} </td>
+      <td> {{task.done}} </td>
       <td task-delete></td>
     </tr>
   </table>

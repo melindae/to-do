@@ -28,7 +28,7 @@ doThings.controller('doController', function($scope, $firebaseArray) {
   
   $scope.tasks = $firebaseArray(fireRef);
 
-    $scope.thing = { name: "" };
+  $scope.thing = { name: "" };
 
   // document.addEventListener( 
   //   'touchstart', 
@@ -42,8 +42,9 @@ doThings.controller('doController', function($scope, $firebaseArray) {
     $scope.tasks.$add( {
         'timein': fireTime,
         'name': $scope.thing.name,
+        'type': $scope.type,
         'priority': $scope.priority,
-        'done': "active",  //'done' defaults to 'active' here
+        'done': "No",  //'done' defaults to 'No' here
     });
 
     $scope.thing.name = "";
@@ -54,7 +55,7 @@ doThings.controller('doController', function($scope, $firebaseArray) {
         oneDayAgo = new Date().getTime()-1000*60*60*24, //for testing
         oneHourAgo = new Date().getTime()-1000*60*60; //for testing
 
-    if ((oneDayAgo > taskTime) || (taskDone == 'complete'))
+    if ((oneDayAgo > taskTime) || (taskDone == 'Yes!'))
       return true
   };
 });
@@ -70,7 +71,7 @@ doThings.controller('oldController', function($scope, $firebaseArray) {
         oneDayAgo = new Date().getTime()-1000*60*60*24, //for testing
         oneHourAgo = new Date().getTime()-1000*60*60; //for testing
 
-    if ((oneDayAgo > taskTime) || (taskDone == 'complete'))
+    if ((oneDayAgo > taskTime) || (taskDone == 'Yes!'))
       return true
    };
 });
@@ -83,7 +84,7 @@ doThings.directive('taskComplete', function() {
     link: function($scope, element, attrs) {
       $scope.taskDone = function(task) {
         var taskIndex = $scope.tasks.indexOf(task);
-        $scope.tasks[taskIndex].done = "complete";
+        $scope.tasks[taskIndex].done = "Yes!";
         $scope.tasks.$save(taskIndex).then(function(fireRef) {
           fireRef.key() === $scope.tasks[taskIndex].$id;
         });
