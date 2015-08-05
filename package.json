@@ -4,7 +4,8 @@
   "description": "Blank page",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "bower install"
   },
   "author": "Melinda Evans",
   "license": "ISC",
@@ -27,7 +28,4 @@
     "grunt-hapi": "^0.8.1",
     "grunt-sass": "~0.15.0"
   },
-  "scripts": {
-    "postinstall": "bower install"
-  }
 }
