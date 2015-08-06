@@ -1,0 +1,27 @@
+<div class="nav-buttons">
+    <a ui-sref="home" class="homeTaskButton">New Things</a>
+    <input type="radio" class='typeButton' ng-model="taskSee" value="Work" />Work things
+    <input type="radio" class='typeButton' ng-model="taskSee" value="Home" />Home things
+    <input type="radio" class='typeButton' ng-model="taskSee" value="Play" />Play things
+    <input type="radio" class='typeButton' ng-model="taskSee" value="All" />All things
+</div>
+
+<div class='main-list'>
+  <table>
+    <tr>
+      <th>Thing done!</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Done?</th>
+      <th>Clear</th>
+    </tr>
+    <tr ng-repeat="task in tasks" ng-show="showtask(task.timein, task.done, task.type)">
+      <td class="tableName">{{task.name}}</td>
+      <td> {{task.type}} </td>
+      <td> {{task.priority}} </td>
+      <td> {{task.done}} </td>
+      <td task-delete></td>
+    </tr>
+  </table>
+</div>
+
