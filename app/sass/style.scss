@@ -2,8 +2,8 @@ body {
   background-image: url("/images/symphony.png");
   background-color: #ffffff;
   font-family: 'Roboto';
+  font-size: 100%
 }
- 
 h1 {
 color: #e2413e; /*title*/
 font-family: 'Architects Daughter', Arial, serif;
@@ -11,29 +11,27 @@ font-size: 4em;
 text-align: center;
 margin: 15px 0px 10px 0px;
 }
-
 .nav-buttons{
      margin: 0 auto;
      width: 70%;
      font-family: 'Architects Daughter', Arial, serif;
-     font-size: 18px;
-
+     font-size: 1.1em;
+     font-weight: bold;
   a {
     border-radius: 8px;
     color: #e2413e;  /* button text*/
-    font-size: 18px;
+    font-size: 1.3em;
     font-weight: bold;
-    padding: 5px 10px 5px 10px;
+    padding: .8% 1.6%;
     text-align: center;
     text-decoration: none;
     background: #fbfbfb;
     border: solid 1px #260126;
     box-shadow: 2px 2px 2px #888888; 
   }
-
   input[type = 'radio'] {
-    width:19px;
-    height:19px;
+    width: 1.6em;
+    height: 1.6em;
     margin: 0 4px 0 15px;
     vertical-align:middle;
     cursor:pointer;
@@ -41,74 +39,113 @@ margin: 15px 0px 10px 0px;
 }
  
 ::-webkit-input-placeholder {
- font-size: 14px;
+ font-size: 1.2em;
 }
 
 .main-list {
+  .col-title {
+    font-size: 1.2em;
+  }
   table {
     border: 1px solid #50514f;
     width: 70%;
-    padding: 5px 10px 10px 10px;
+    padding: .8% 1.6% 1.6% 1.6%;
     background-color: #FF555A; /* table background */
-    margin: 25px;
+    margin: 3%;
     margin-left:auto; 
     margin-right:auto;
-    margin-top: 10px;
+    margin-top: 1.6%;
     border-spacing: 0px 2px;
     text-align: center;
     color: white;
   }
-
   td {
-    padding: 5px;
+    padding: 1%;
     background-color: #606F7F; /* table interior */
   }
-
   input[type="text"] {
     width: 100%;
     border: 1px solid #999; 
-    height:30px;
+    height:2.2em;
     border-radius: 8px;
-    padding-left: 10px;
+    padding-left: 1.6%;
   }
-
   select {
-    width: 60px;
+    width: 5em;
     border: 1px solid #999; 
     height:100%;
     border-radius: 8px;
     padding-left: 10px;
     color: #8C6954; /* dropdown text */
   }
-
   button {
-    outline: none;
-    color: white;
     font-size: 24px; 
     cursor: pointer;
     background: transparent;
     border: 1px solid transparent; 
     text-align: center;
-    color: #260126; /* fa icons */
-    text-shadow: 1px 1px #995C3D;
+    color: #FF555A; /* fa icons */
+    text-shadow: 1px 1px #000000;
     margin:auto;
   }
-
-  .tableDone .addButton {
-    font-size: 30px;
-    color: green;
-  }
-
   .tableName {
     text-align: left;
     padding-left: 20px;
+    font-size: 1.2em;
   }
+}
 
-  .iconColumn {
-    width: 65px;
+@media screen and (max-width: 630px) {
+
+  h1 {
+    font-size: 2em;
   }
-
-  .valueColumn {
-    width: 65px;
+  .nav-buttons{
+       width: 90%;
+    a {
+      display: block;
+      font-size: 1.2em;
+      padding: .8% 20%;
+    }
+    input[type = 'radio'] {
+      margin: .6em .3em;
+    }
+  }
+  .main-list {
+    .col-title {
+      font-size: .9em;
+    }
+    table {
+      width: 90%;
+    }
+    select {
+      width: 3em;
+      border: 1px solid #999; 
+      height:100%;
+      border-radius: 8px;
+      padding-left: 10px;
+      color: #8C6954; /* dropdown text */
+    }
+    button {
+      font-size: 24px; 
+      cursor: pointer;
+      background: transparent;
+      border: 1px solid transparent; 
+      text-align: center;
+      color: #FF555A; /* fa icons */
+      text-shadow: 1px 1px #000000;
+      margin:auto;
+    }
+    .tableName {
+      text-align: left;
+      padding-left: 20px;
+      font-size: 1.2em;
+    }
+    .opt-Column {
+      width: 3em;
+    }
+    .icon-column {
+      width: 2em;
+    }
   }
 }

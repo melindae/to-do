@@ -1,21 +1,21 @@
 <div class="nav-buttons">
     <a ui-sref='old' class='oldTaskButton'>Old Things</a>
-    <input type="radio" ng-model="taskSee" value="Work" />Work things
-    <input type="radio" ng-model="taskSee" value="Home" />Home things
-    <input type="radio" ng-model="taskSee" value="Play" />Play things
-    <input type="radio" ng-model="taskSee" value="All" />All things
+    <input type="radio" ng-model="taskSee" value="Work" />Work
+    <input type="radio" ng-model="taskSee" value="Home" />Home
+    <input type="radio" ng-model="taskSee" value="Play" />Play
+    <input type="radio" ng-model="taskSee" value="All" />All
 </div>
 
 <div class='main-list'>
   <table>
-    <tr>
+    <tr class='col-title'>
       <th>Thing to do</th>
       <th>Type</th>
       <th>Value</th>
     </tr>
     <tr>
-      <td><input type="text" placeholder="Add a new Thing to do" ng-model="thing.name"></td>
-      <td class="typeColumn">
+      <td><input type="text" placeholder="New Thing" ng-model="thing.name"></td>
+      <td class="opt-column">
         <select ng-model="type">
           <option value="">???</option>          
           <option value="Home">Home</option>
@@ -23,7 +23,7 @@
           <option value="Play">Play</option>
         </select>
       </td>
-      <td class="valueColumn">
+      <td class="opt-column">
         <select ng-model="priority">
           <option value="">???</option>          
           <option value="High">High</option>
@@ -31,7 +31,7 @@
           <option value="Low">Low</option>
         </select>
       </td>
-      <td class="iconColumn" ><button class="addButton fa fa-plus-square-o" ng-click="addtask()"></button></td>
+      <td class="icon-column" ><button class="addButton fa fa-plus-square-o" ng-click="addtask()"></button></td>
     </tr>
     <tr ng-repeat="task in tasks" ng-show="showtask(task.timein, task.done, task.type)">
       <td class="tableName"> {{task.name}} </td>
