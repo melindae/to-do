@@ -24,9 +24,9 @@ doThings.config(['$stateProvider', '$locationProvider', function($stateProvider,
 }]);
 
 doThings.controller('doController', function($scope, $firebaseArray, $firebaseObject) {
-  var fireRef = new Firebase("https://blinding-fire-8984.firebaseio.com/melinda/tasks");
-  var fireCol = new Firebase("https://blinding-fire-8984.firebaseio.com/melinda/colors");
-  var fireCss = new Firebase("https://blinding-fire-8984.firebaseio.com/melinda/colors/css");
+  var fireRef = new Firebase("https://blinding-fire-8984.firebaseio.com/chris/tasks");
+  var fireCol = new Firebase("https://blinding-fire-8984.firebaseio.com/chris/colors");
+  var fireCss = new Firebase("https://blinding-fire-8984.firebaseio.com/chris/colors/css");
   var fireTime = Firebase.ServerValue.TIMESTAMP;
   $scope.tasks = $firebaseArray(fireRef);
   $scope.colors = $firebaseObject(fireCol);
@@ -84,6 +84,7 @@ doThings.controller('doController', function($scope, $firebaseArray, $firebaseOb
   //     console.log( event );
   //   }
   // );
+ 
 
   $scope.addtask = function() {
     $scope.tasks.$add({
@@ -113,7 +114,7 @@ doThings.controller('doController', function($scope, $firebaseArray, $firebaseOb
 });
 
 doThings.controller('oldController', function($scope, $firebaseArray) {
-  var fireRef = new Firebase("https://blinding-fire-8984.firebaseio.com/melinda/tasks");
+  var fireRef = new Firebase("https://blinding-fire-8984.firebaseio.com/chris/tasks");
   var fireTime = Firebase.ServerValue.TIMESTAMP;
 
   $scope.tasks = $firebaseArray(fireRef);
@@ -165,5 +166,5 @@ doThings.directive('taskDelete', function() {
       }
     }
   }
-});
+}); 
 },{}]},{},[1]);

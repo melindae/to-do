@@ -83,6 +83,7 @@ doThings.controller('doController', function($scope, $firebaseArray, $firebaseOb
   //     console.log( event );
   //   }
   // );
+ 
 
   $scope.addtask = function() {
     $scope.tasks.$add({
@@ -164,4 +165,4 @@ doThings.directive('taskDelete', function() {
       }
     }
   }
-});
+}); 
