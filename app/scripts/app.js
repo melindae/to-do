@@ -23,7 +23,7 @@ doThings.config(['$stateProvider', '$locationProvider', function($stateProvider,
 }]);
 
 doThings.controller('doController', function($scope, $firebaseArray) {
-  var fireRef = new Firebase("https://blinding-fire-8984.firebaseio.com/tasks");
+  var fireRef = new Firebase("https://blinding-fire-8984.firebaseio.com/chris/tasks");
   var fireTime = Firebase.ServerValue.TIMESTAMP;
 
   $scope.tasks = $firebaseArray(fireRef);
@@ -68,7 +68,7 @@ doThings.controller('doController', function($scope, $firebaseArray) {
 });
 
 doThings.controller('oldController', function($scope, $firebaseArray) {
-  var fireRef = new Firebase("https://blinding-fire-8984.firebaseio.com/tasks");
+  var fireRef = new Firebase("https://blinding-fire-8984.firebaseio.com/chris/tasks");
   var fireTime = Firebase.ServerValue.TIMESTAMP;
 
   $scope.tasks = $firebaseArray(fireRef);

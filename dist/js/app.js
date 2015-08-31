@@ -24,7 +24,7 @@ doThings.config(['$stateProvider', '$locationProvider', function($stateProvider,
 }]);
 
 doThings.controller('doController', function($scope, $firebaseArray) {
-  var fireRef = new Firebase("https://blinding-fire-8984.firebaseio.com/tasks");
+  var fireRef = new Firebase("https://blinding-fire-8984.firebaseio.com/chris/tasks");
   var fireTime = Firebase.ServerValue.TIMESTAMP;
 
   $scope.tasks = $firebaseArray(fireRef);
@@ -61,7 +61,7 @@ doThings.controller('doController', function($scope, $firebaseArray) {
       oneHourAgo = new Date()
       .getTime() - 1000 * 60 * 60; //for testing
 
-    if ((oneDayAgo < taskTime) 
+    if ((oneWeekAgo < taskTime) 
       && (taskDone !== 'Yes!') 
       && ((taskType == $scope.taskSee) || ($scope.taskSee == 'All')))
       return true
@@ -69,7 +69,7 @@ doThings.controller('doController', function($scope, $firebaseArray) {
 });
 
 doThings.controller('oldController', function($scope, $firebaseArray) {
-  var fireRef = new Firebase("https://blinding-fire-8984.firebaseio.com/tasks");
+  var fireRef = new Firebase("https://blinding-fire-8984.firebaseio.com/chris/tasks");
   var fireTime = Firebase.ServerValue.TIMESTAMP;
 
   $scope.tasks = $firebaseArray(fireRef);
@@ -83,7 +83,7 @@ doThings.controller('oldController', function($scope, $firebaseArray) {
       oneHourAgo = new Date()
       .getTime() - 1000 * 60 * 60; //for testing
 
-    if (((oneDayAgo > taskTime) || (taskDone == 'Yes!'))
+    if (((oneWeekAgo > taskTime) || (taskDone == 'Yes!'))
       && ((taskType == $scope.taskSee) || ($scope.taskSee == 'All')))
       return true
   };
@@ -122,31 +122,4 @@ doThings.directive('taskDelete', function() {
     }
   }
 });
-
-
-
-
-/*doThings.directive('showtask', function() {
-  return {
-    restrict: 'A',
-    replace: true,
-    scope: 
-    template: "<tr ng-repeat='task in tasks' ng-show='showtask(task.timein, task.done, task.type)'>",
-    link :function($scope, elemant, attrs) {
-      $scope.showtask = function(taskTime, taskDone, taskType) {
-        var oneWeekAgo = new Date().getTime()-1000*60*60*24*7, 
-            oneDayAgo = new Date().getTime()-1000*60*60*24, //for testing
-            oneHourAgo = new Date().getTime()-1000*60*60; //for testing
-
-        if (( oneDayAgo < taskTime) 
-          && (taskDone !== 'Yes!')
-          && ((taskType == $scope.taskSee) || ($scope.taskSee == 'All'))
-        )
-        return true
-      };
-    }
-  }
-
-})*/
-
 },{}]},{},[1]);
