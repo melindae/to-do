@@ -22,11 +22,55 @@ doThings.config(['$stateProvider', '$locationProvider', function($stateProvider,
 
 }]);
 
-doThings.controller('doController', function($scope, $firebaseArray) {
+doThings.controller('doController', function($scope, $firebaseArray, $firebaseObject) {
   var fireRef = new Firebase("https://blinding-fire-8984.firebaseio.com/chris/tasks");
+  var fireCol = new Firebase("https://blinding-fire-8984.firebaseio.com/chris/colors");
+  var fireCss = new Firebase("https://blinding-fire-8984.firebaseio.com/chris/colors/css");
   var fireTime = Firebase.ServerValue.TIMESTAMP;
-
   $scope.tasks = $firebaseArray(fireRef);
+  $scope.colors = $firebaseObject(fireCol);
+  var cssNow = $firebaseObject(fireCss);
+
+
+  //  retrieve and apply CSS preference
+  cssNow.$bindTo($scope, "data").then(function() {
+    currentCss = $scope.data.$value
+    console.log($scope.data.$value); 
+    console.log(currentCss);
+
+    var oldlink = document.getElementsByTagName("link").item(0);
+    var newlink = document.createElement("link");
+
+    newlink.setAttribute("rel", "stylesheet");
+    newlink.setAttribute("type", "text/css");
+    newlink.setAttribute("href", currentCss);
+
+    document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+  });
+
+  //  change and save CSS preference
+  $scope.changeCSS = function(cssFile, cssLinkIndex) {
+
+    var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+    var newlink = document.createElement("link");
+
+    newlink.setAttribute("rel", "stylesheet");
+    newlink.setAttribute("type", "text/css");
+    newlink.setAttribute("href", cssFile);
+
+
+    $scope.colors.css = cssFile
+    $scope.colors.$save().then(function(ref) {
+      ref.key() === $scope.colors.$id; // true
+    }, function(error) {
+      console.log("Error:", error);
+    });
+
+    document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+  }
+
+
+
   $scope.thing = {
     name: ""
   };

@@ -1,128 +1,147 @@
-/*
-colors used:
-background: #FFF5F0 pale orange
-title text: #526614 dark green
-button: #CC6600 med/dk orange
-button: #526614 med /dk green
-table background: #CCFF33 bright green
-table center: #FF9966 peach
-*/
 body {
-  background-color: teal;
+  background-image: url("/images/skullsblue.png"); /* background image*/
+  background-color: #ffffff;
   font-family: 'Roboto';
- 
- h1 {
-  color: #526614;
-  font-family: 'Rock Salt', cursive;
-  font-size: 30pt;
-  text-align: center;
-  margin: 15px 0px 10px 0px;
-  }
+  font-size: 100%
 }
-
+h1 {
+color: #e2413e; /*title*/
+font-family: 'Architects Daughter', Arial, serif;
+font-size: 4em;
+text-align: center;
+margin: 15px 0px 10px 0px;
+}
 .nav-buttons{
      margin: 0 auto;
-     width: 530px;
-
+     width: 70%;
+     font-family: 'Architects Daughter', Arial, serif;
+     font-size: 1.1em;
+     font-weight: bold;
   a {
-    border-radius: 11px;
-    color: #ffffff;
-    font-size: 16px;
-    padding: 5px 10px 5px 10px;
+    border-radius: 8px;
+    color: #e2413e;  /* button text*/
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: .8% 1.6%;
     text-align: center;
     text-decoration: none;
+    background: #fbfbfb; /* old/new button background*/
+    border: solid 1px #260126;  /* old/new button border*/
+    box-shadow: 2px 2px 2px #888888;   
   }
-  input[type = 'checkbox'] {
-
-    width:19px;
-    height:19px;
+  input[type = 'radio'] {
+    width: 1.6em;
+    height: 1.6em;
     margin: 0 4px 0 15px;
     vertical-align:middle;
     cursor:pointer;
   }
-
-  .homeTaskButton {
-    background: #CC6600;
-    border: solid 1px #934A00
-  }
-  
-  .oldTaskButton {
-    background: #526614;
-    border: solid 1px #39470E
-  }
 }
+  .cssChoose {
+
+  }
+  .cssOne {
+    margin-right: 15px;
+    width: 30%;
+  }
+  .cssTwo {
+    float: right;
+    width: 30%;
+  }
  
 ::-webkit-input-placeholder {
- font-size: 14px;
- color: #7A991F;
+ font-size: 1.2em;
 }
 
 .main-list {
+  .col-title {
+    font-size: 1.2em;
+  }
   table {
-    border: 1px solid gray;
-    width: 800px;
-    padding: 5px 10px 10px 10px;
-    background-color: #CCFF33;
-    margin: 25px;
+    border: 1px solid #50514f;  /* table border */
+    width: 70%;
+    padding: .8% 1.6% 1.6% 1.6%;
+    background-color: #FF555A; /* table background */
+    margin: 3%;
     margin-left:auto; 
     margin-right:auto;
-    margin-top: 10px;
+    margin-top: 1.6%;
     border-spacing: 0px 2px;
     text-align: center;
+    color: white;
   }
-
   td {
-    padding: 5px;
-    background-color: #FF9966;
+    padding: 1%;
+    background-color: #606F7F; /* table interior */
   }
-
   input[type="text"] {
     width: 100%;
-    background: #CCFF33;
     border: 1px solid #999; 
-    height:30px;
+    height:2.2em;
     border-radius: 8px;
-    padding-left: 10px;
+    padding-left: 1.6%;
   }
-
   select {
-    width: 60px;
-    background: #CCFF33;
+    width: 5em;
     border: 1px solid #999; 
     height:100%;
     border-radius: 8px;
     padding-left: 10px;
-    color: #7A991F;
+    color: #8C6954;   /* dropdown text */
   }
-
   button {
-    outline: none;
-    color: white;
     font-size: 24px; 
     cursor: pointer;
     background: transparent;
     border: 1px solid transparent; 
     text-align: center;
-    color: #CCFF33;
-    text-shadow: 1px 1px #995C3D;
+    color: #FF555A;   /* fa icons */
+    text-shadow: 1px 1px #000000;
     margin:auto;
   }
-
-  .tableDone .addButton {
-    font-size: 30px;
-    color: #CCFF33;
-  }
-
   .tableName {
     text-align: left;
     padding-left: 20px;
+    font-size: 1.2em;
   }
+}
 
-  .iconColumn {
-    width: 65px;
+@media screen and (max-width: 630px) {
+
+  h1 {
+    font-size: 2em;
   }
-
-  .valueColumn {
-    width: 65px;
+  .nav-buttons{
+       width: 90%;
+    a {
+      display: block;
+      font-size: 1.2em;
+      padding: .8% 20%;
+    }
+    input[type = 'radio'] {
+      margin: .6em .3em;
+    }
+  }
+  .main-list {
+    .col-title {
+      font-size: .9em;
+    }
+    table {
+      width: 90%;
+    }
+    select {
+      width: 3em;
+    }
+    .tableName {
+      text-align: left;
+      padding-left: 20px;
+      font-size: 1.2em;
+    }
+    .opt-Column {
+      width: 3em;
+    }
+    .icon-column {
+      width: 2em;
+    }
   }
 }

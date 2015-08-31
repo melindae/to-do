@@ -1,5 +1,6 @@
+
 <div class="nav-buttons">
-    <a ui-sref='old' class='oldTaskButton'>Old Things</a>
+    <a class="navOld" ui-sref='old' class='oldTaskButton'>Old Things</a>
     <input type="radio" ng-model="taskSee" value="Work" />Work
     <input type="radio" ng-model="taskSee" value="Home" />Home
     <input type="radio" ng-model="taskSee" value="Play" />Play
@@ -40,4 +41,7 @@
       <td task-complete></td>
     </tr>
   </table>
-</div>
+
+  <button class="cssChooseMobile cssOne" href="#" ng-click="changeCSS('/css/style.css', 0);">Light</button>
+  <button class="cssChooseMobile cssTwo" href="#" ng-click="changeCSS('/css/styletwo.css', 0);">Dark</button>
+</div> 

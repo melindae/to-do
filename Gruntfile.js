@@ -21,7 +21,8 @@ module.exports = function(grunt) {
                     style: 'expanded'
                 },
                 files: {
-                    './dist/css/style.css': './app/sass/style.scss'
+                    './dist/css/style.css': './app/sass/style.scss',
+                    './dist/css/styletwo.css': './app/sass/styletwo.scss'
                 }
             }
         },
@@ -29,7 +30,8 @@ module.exports = function(grunt) {
         autoprefixer: {
             dist: {
                 files: {
-                    './dist/css/style.css': './dist/css/style.css'
+                    './dist/css/style.css': './dist/css/style.css',
+                    './dist/css/styletwo.css': './dist/css/styletwo.css'
                 }
             }
         },

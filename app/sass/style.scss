@@ -1,5 +1,5 @@
 body {
-  background-image: url("/images/symphony.png");
+  background-image: url("/images/symphony.png"); /* background image*/
   background-color: #ffffff;
   font-family: 'Roboto';
   font-size: 100%
@@ -25,9 +25,9 @@ margin: 15px 0px 10px 0px;
     padding: .8% 1.6%;
     text-align: center;
     text-decoration: none;
-    background: #fbfbfb;
-    border: solid 1px #260126;
-    box-shadow: 2px 2px 2px #888888; 
+    background: #fbfbfb; /* old/new button background*/
+    border: solid 1px #260126;  /* old/new button border*/
+    box-shadow: 2px 2px 2px #888888;   
   }
   input[type = 'radio'] {
     width: 1.6em;
@@ -37,6 +37,17 @@ margin: 15px 0px 10px 0px;
     cursor:pointer;
   }
 }
+  .cssChoose {
+
+  }
+  .cssOne {
+    margin-right: 15px;
+    width: 30%;
+  }
+  .cssTwo {
+    float: right;
+    width: 30%;
+  }
  
 ::-webkit-input-placeholder {
  font-size: 1.2em;
@@ -47,7 +58,7 @@ margin: 15px 0px 10px 0px;
     font-size: 1.2em;
   }
   table {
-    border: 1px solid #50514f;
+    border: 1px solid #50514f;  /* table border */
     width: 70%;
     padding: .8% 1.6% 1.6% 1.6%;
     background-color: #FF555A; /* table background */
@@ -76,7 +87,7 @@ margin: 15px 0px 10px 0px;
     height:100%;
     border-radius: 8px;
     padding-left: 10px;
-    color: #8C6954; /* dropdown text */
+    color: #8C6954;   /* dropdown text */
   }
   button {
     font-size: 24px; 
@@ -84,7 +95,7 @@ margin: 15px 0px 10px 0px;
     background: transparent;
     border: 1px solid transparent; 
     text-align: center;
-    color: #FF555A; /* fa icons */
+    color: #FF555A;   /* fa icons */
     text-shadow: 1px 1px #000000;
     margin:auto;
   }
@@ -120,21 +131,6 @@ margin: 15px 0px 10px 0px;
     }
     select {
       width: 3em;
-      border: 1px solid #999; 
-      height:100%;
-      border-radius: 8px;
-      padding-left: 10px;
-      color: #8C6954; /* dropdown text */
-    }
-    button {
-      font-size: 24px; 
-      cursor: pointer;
-      background: transparent;
-      border: 1px solid transparent; 
-      text-align: center;
-      color: #FF555A; /* fa icons */
-      text-shadow: 1px 1px #000000;
-      margin:auto;
     }
     .tableName {
       text-align: left;
