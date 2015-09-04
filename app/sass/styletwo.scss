@@ -5,7 +5,7 @@ body {
   font-size: 100%
 }
 h1 {
-color: #e2413e; /*title*/
+color: white; /*title*/
 font-family: 'Architects Daughter', Arial, serif;
 font-size: 4em;
 text-align: center;
@@ -43,10 +43,14 @@ margin: 15px 0px 10px 0px;
   .cssOne {
     margin-right: 15px;
     width: 30%;
+    color: white !important;
+    font-weight: bold;
   }
   .cssTwo {
     float: right;
     width: 30%;
+    color: black !important;
+    font-weight: bold;
   }
  
 ::-webkit-input-placeholder {
@@ -68,11 +72,11 @@ margin: 15px 0px 10px 0px;
     margin-top: 1.6%;
     border-spacing: 0px 2px;
     text-align: center;
-    color: white;
+    color: black;
   }
   td {
     padding: 1%;
-    background-color: #606F7F; /* table interior */
+    background-color: white; /* table interior */
   }
   input[type="text"] {
     width: 100%;

@@ -6,7 +6,7 @@ body {
   font-size: 100%; }
 
 h1 {
-  color: #e2413e;
+  color: white;
   /*title*/
   font-family: 'Architects Daughter', Arial, serif;
   font-size: 4em;
@@ -42,11 +42,15 @@ h1 {
 
 .cssOne {
   margin-right: 15px;
-  width: 30%; }
+  width: 30%;
+  color: white !important;
+  font-weight: bold; }
 
 .cssTwo {
   float: right;
-  width: 30%; }
+  width: 30%;
+  color: black !important;
+  font-weight: bold; }
 
 ::-webkit-input-placeholder {
   font-size: 1.2em; }
@@ -66,10 +70,10 @@ h1 {
   margin-top: 1.6%;
   border-spacing: 0px 2px;
   text-align: center;
-  color: white; }
+  color: black; }
 .main-list td {
   padding: 1%;
-  background-color: #606F7F;
+  background-color: white;
   /* table interior */ }
 .main-list input[type="text"] {
   width: 100%;

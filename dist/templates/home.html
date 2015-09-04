@@ -34,12 +34,25 @@
       </td>
       <td class="icon-column" ><button class="addButton fa fa-plus-square-o" ng-click="addtask()"></button></td>
     </tr>
-    <tr ng-repeat="task in tasks" ng-show="showtask(task.timein, task.done, task.type)">
+    <tr ng-repeat="task in tasks"  ng-show="(showtask(task.timein, task.done, task.type)) && (task.priority === 'High')">
       <td class="tableName"> {{task.name}} </td>
       <td> {{task.type}} </td>
       <td> {{task.priority}} </td>
       <td task-complete></td>
     </tr>
+    <tr ng-repeat="task in tasks"  ng-show="(showtask(task.timein, task.done, task.type)) && (task.priority === 'Med')">
+      <td class="tableName"> {{task.name}} </td>
+      <td> {{task.type}} </td>
+      <td> {{task.priority}} </td>
+      <td task-complete></td>
+    </tr>
+    <tr ng-repeat="task in tasks"  ng-show="(showtask(task.timein, task.done, task.type)) && (task.priority === 'Low')">
+      <td class="tableName"> {{task.name}} </td>
+      <td> {{task.type}} </td>
+      <td> {{task.priority}} </td>
+      <td task-complete></td>
+    </tr>
+
   </table>
 
   <button class="cssChooseMobile cssOne" href="#" ng-click="changeCSS('/css/style.css', 0);">Light</button>

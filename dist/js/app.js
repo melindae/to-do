@@ -24,9 +24,9 @@ doThings.config(['$stateProvider', '$locationProvider', function($stateProvider,
 }]);
 
 doThings.controller('doController', function($scope, $firebaseArray, $firebaseObject) {
-  var fireRef = new Firebase("https://blinding-fire-8984.firebaseio.com/work/tasks");
-  var fireCol = new Firebase("https://blinding-fire-8984.firebaseio.com/work/colors");
-  var fireCss = new Firebase("https://blinding-fire-8984.firebaseio.com/work/colors/css");
+  var fireRef = new Firebase("https://blinding-fire-8984.firebaseio.com/chris/tasks");
+  var fireCol = new Firebase("https://blinding-fire-8984.firebaseio.com/chris/colors");
+  var fireCss = new Firebase("https://blinding-fire-8984.firebaseio.com/chris/colors/css");
   var fireTime = Firebase.ServerValue.TIMESTAMP;
   $scope.tasks = $firebaseArray(fireRef);
   $scope.colors = $firebaseObject(fireCol);
@@ -87,6 +87,7 @@ doThings.controller('doController', function($scope, $firebaseArray, $firebaseOb
  
 
   $scope.addtask = function() {
+
     $scope.tasks.$add({
       'timein': fireTime,
       'name': $scope.thing.name,
@@ -114,7 +115,7 @@ doThings.controller('doController', function($scope, $firebaseArray, $firebaseOb
 });
 
 doThings.controller('oldController', function($scope, $firebaseArray) {
-  var fireRef = new Firebase("https://blinding-fire-8984.firebaseio.com/work/tasks");
+  var fireRef = new Firebase("https://blinding-fire-8984.firebaseio.com/chris/tasks");
   var fireTime = Firebase.ServerValue.TIMESTAMP;
 
   $scope.tasks = $firebaseArray(fireRef);
