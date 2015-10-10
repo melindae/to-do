@@ -58,7 +58,6 @@ doThings.controller('doController', function($scope, $firebaseArray, $firebaseOb
     newlink.setAttribute("type", "text/css");
     newlink.setAttribute("href", cssFile);
 
-
     $scope.colors.css = cssFile
     $scope.colors.$save().then(function(ref) {
       ref.key() === $scope.colors.$id; // true
