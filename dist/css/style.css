@@ -40,13 +40,13 @@ h1 {
     vertical-align: middle;
     cursor: pointer; }
 
-.cssOne {
-  margin-right: 15px;
-  width: 30%; }
+.cssOption {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%; }
 
-.cssTwo {
-  float: right;
-  width: 30%; }
+.cssPick {
+  width: 20%; }
 
 ::-webkit-input-placeholder {
   font-size: 1.2em; }

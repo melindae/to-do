@@ -1,11 +1,20 @@
 body {
-  background-image: url("/images/skullsblue.png"); /* background image*/
-  background-color: #ffffff;
+  background-image: url("/images/robot_purple.png");  /* background image*/
+  background-color: #2F041F;
   font-family: 'Roboto';
   font-size: 100%
 }
+
+/*
+#2F041F - purple
+#775253 - brown
+#BDC696 - green
+#DFE0DC - white
+#AAB287 - darker green
+*/
+
 h1 {
-color: white; /*title*/
+color: #BDC696; /*title*/
 font-family: 'Architects Daughter', Arial, serif;
 font-size: 4em;
 text-align: center;
@@ -17,17 +26,18 @@ margin: 15px 0px 10px 0px;
      font-family: 'Architects Daughter', Arial, serif;
      font-size: 1.1em;
      font-weight: bold;
+     color: #DFE0DC;
   a {
     border-radius: 8px;
-    color: #e2413e;  /* button text*/
+    color: #775253;  /* button text*/
     font-size: 1.3em;
     font-weight: bold;
     padding: .8% 1.6%;
     text-align: center;
     text-decoration: none;
-    background: #fbfbfb; /* old/new button background*/
+    background: #DFE0DC; /* old/new button background*/
     border: solid 1px #260126;  /* old/new button border*/
-    box-shadow: 2px 2px 2px #888888;   
+    box-shadow: 2px 2px 2px #000000;   
   }
   input[type = 'radio'] {
     width: 1.6em;
@@ -37,21 +47,15 @@ margin: 15px 0px 10px 0px;
     cursor:pointer;
   }
 }
-  .cssChoose {
-
-  }
-  .cssOne {
-    margin-right: 15px;
-    width: 30%;
-    color: white !important;
-    font-weight: bold;
-  }
-  .cssTwo {
-    float: right;
-    width: 30%;
-    color: black !important;
-    font-weight: bold;
-  }
+ 
+.cssOption {
+  width: 80%;
+  margin-left: 10%; 
+  margin-right:10%;
+}
+.cssPick {
+  width: 20%;
+}
  
 ::-webkit-input-placeholder {
  font-size: 1.2em;
@@ -65,7 +69,7 @@ margin: 15px 0px 10px 0px;
     border: 1px solid #50514f;  /* table border */
     width: 70%;
     padding: .8% 1.6% 1.6% 1.6%;
-    background-color: #FF555A; /* table background */
+    background-color: #DFE0DC; /* table background */
     margin: 3%;
     margin-left:auto; 
     margin-right:auto;
@@ -76,7 +80,7 @@ margin: 15px 0px 10px 0px;
   }
   td {
     padding: 1%;
-    background-color: white; /* table interior */
+    background-color: #AAB287; /* table interior */
   }
   input[type="text"] {
     width: 100%;
@@ -99,7 +103,7 @@ margin: 15px 0px 10px 0px;
     background: transparent;
     border: 1px solid transparent; 
     text-align: center;
-    color: #FF555A;   /* fa icons */
+    color: #775253;   /* fa icons */
     text-shadow: 1px 1px #000000;
     margin:auto;
   }

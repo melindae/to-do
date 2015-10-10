@@ -22,7 +22,9 @@ module.exports = function(grunt) {
                 },
                 files: {
                     './dist/css/style.css': './app/sass/style.scss',
-                    './dist/css/styletwo.css': './app/sass/styletwo.scss'
+                    './dist/css/styletwo.css': './app/sass/styletwo.scss',
+                    './dist/css/stylethree.css': './app/sass/stylethree.scss',
+                    './dist/css/stylefour.css': './app/sass/stylefour.scss'
                 }
             }
         },
@@ -31,7 +33,9 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     './dist/css/style.css': './dist/css/style.css',
-                    './dist/css/styletwo.css': './dist/css/styletwo.css'
+                    './dist/css/styletwo.css': './dist/css/styletwo.css',
+                    './dist/css/stylethree.css': './dist/css/stylethree.css',
+                    './dist/css/stylefour.css': './dist/css/stylefour.css'
                 }
             }
         },

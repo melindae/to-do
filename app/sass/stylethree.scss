@@ -1,11 +1,22 @@
 body {
-  background-image: url("/images/symphony.png"); /* background image*/
-  background-color: #ffffff;
+  background-image: url("/images/random_grey_variations.png"); /* background image*/
+  background-color: #333333;
   font-family: 'Roboto';
   font-size: 100%
 }
+
+
+/*
+#333333 - darker
+#424242 - dark
+#00CCD6 - lt blue
+#EFEFEF - white
+#FFD900 - yellow
+*/
+
+
 h1 {
-color: #e2413e; /*title*/
+color: #00CCD6; /*title*/
 font-family: 'Architects Daughter', Arial, serif;
 font-size: 4em;
 text-align: center;
@@ -17,9 +28,10 @@ margin: 15px 0px 10px 0px;
      font-family: 'Architects Daughter', Arial, serif;
      font-size: 1.1em;
      font-weight: bold;
+     color: #FFD900;
   a {
     border-radius: 8px;
-    color: #e2413e;  /* button text*/
+    color: #00CCD6;  /* button text*/
     font-size: 1.3em;
     font-weight: bold;
     padding: .8% 1.6%;
@@ -59,7 +71,7 @@ margin: 15px 0px 10px 0px;
     border: 1px solid #50514f;  /* table border */
     width: 70%;
     padding: .8% 1.6% 1.6% 1.6%;
-    background-color: #FF555A; /* table background */
+    background-color: #00CCD6; /* table background */
     margin: 3%;
     margin-left:auto; 
     margin-right:auto;
@@ -70,7 +82,7 @@ margin: 15px 0px 10px 0px;
   }
   td {
     padding: 1%;
-    background-color: #606F7F; /* table interior */
+    background-color: #424242; /* table interior */
   }
   input[type="text"] {
     width: 100%;
@@ -93,7 +105,7 @@ margin: 15px 0px 10px 0px;
     background: transparent;
     border: 1px solid transparent; 
     text-align: center;
-    color: #FF555A;   /* fa icons */
+    color: #FFD900;   /* fa icons */
     text-shadow: 1px 1px #000000;
     margin:auto;
   }

@@ -1,19 +1,12 @@
 body {
-  background-image: url("/images/robot_purple.png");
+  background-image: url("/images/skullsblue.png");
   /* background image*/
-  background-color: #2F041F;
+  background-color: #ffffff;
   font-family: 'Roboto';
   font-size: 100%; }
 
-/*
-#2F041F - purple
-#775253 - brown
-#BDC696 - green
-#DFE0DC - white
-#AAB287 - darker green
-*/
 h1 {
-  color: #BDC696;
+  color: white;
   /*title*/
   font-family: 'Architects Daughter', Arial, serif;
   font-size: 4em;
@@ -25,22 +18,21 @@ h1 {
   width: 70%;
   font-family: 'Architects Daughter', Arial, serif;
   font-size: 1.1em;
-  font-weight: bold;
-  color: #DFE0DC; }
+  font-weight: bold; }
   .nav-buttons a {
     border-radius: 8px;
-    color: #775253;
+    color: #e2413e;
     /* button text*/
     font-size: 1.3em;
     font-weight: bold;
     padding: 0.8% 1.6%;
     text-align: center;
     text-decoration: none;
-    background: #DFE0DC;
+    background: #fbfbfb;
     /* old/new button background*/
     border: solid 1px #260126;
     /* old/new button border*/
-    box-shadow: 2px 2px 2px #000000; }
+    box-shadow: 2px 2px 2px #888888; }
   .nav-buttons input[type='radio'] {
     width: 1.6em;
     height: 1.6em;
@@ -66,7 +58,7 @@ h1 {
   /* table border */
   width: 70%;
   padding: 0.8% 1.6% 1.6% 1.6%;
-  background-color: #DFE0DC;
+  background-color: #FF555A;
   /* table background */
   margin: 3%;
   margin-left: auto;
@@ -77,7 +69,7 @@ h1 {
   color: black; }
 .main-list td {
   padding: 1%;
-  background-color: #AAB287;
+  background-color: white;
   /* table interior */ }
 .main-list input[type="text"] {
   width: 100%;
@@ -99,7 +91,7 @@ h1 {
   background: transparent;
   border: 1px solid transparent;
   text-align: center;
-  color: #775253;
+  color: #FF555A;
   /* fa icons */
   text-shadow: 1px 1px #000000;
   margin: auto; }
