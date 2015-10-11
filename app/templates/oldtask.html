@@ -1,4 +1,4 @@
-<div class="nav-buttons">
+<div class="nav-buttons mobHide">
     <a ui-sref="home" class="homeTaskButton">New Things</a>
     <input type="radio" class='typeButton' ng-model="taskSee" value="Work" />Work
     <input type="radio" class='typeButton' ng-model="taskSee" value="Home" />Home
@@ -6,18 +6,26 @@
     <input type="radio" class='typeButton' ng-model="taskSee" value="All" />All
 </div>
 
+<div class="nav-buttons mobShowNav">
+    <a ui-sref="home" class="homeTaskButton">New</a>
+    <input type="radio" ng-model="taskSee" value="Work" />W
+    <input type="radio" ng-model="taskSee" value="Home" />H
+    <input type="radio" ng-model="taskSee" value="Play" />P
+    <input type="radio" ng-model="taskSee" value="All" />All
+</div>
+
 <div class='main-list'>
   <table>
     <tr>
       <th>Thing done!</th>
-      <th>Type</th>
+      <th class="mobHide">Type</th>
       <th>Value</th>
       <th>Done?</th>
       <th>Clear</th>
     </tr>
     <tr ng-repeat="task in tasks" ng-show="showtask(task.timein, task.done, task.type)">
       <td class="tableName">{{task.name}}</td>
-      <td> {{task.type}} </td>
+      <td class="mobHide"> {{task.type}} </td>
       <td> {{task.priority}} </td>
       <td> {{task.done}} </td>
       <td task-delete></td>
