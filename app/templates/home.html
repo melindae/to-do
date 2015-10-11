@@ -1,9 +1,21 @@
-<div class="nav-buttons">
+<div class="nav-buttons mobHide">
     <a class="navOld" ui-sref='old' class='oldTaskButton'>Old Things</a>
     <input type="radio" ng-model="taskSee" value="Work" />Work
     <input type="radio" ng-model="taskSee" value="Home" />Home
     <input type="radio" ng-model="taskSee" value="Play" />Play
     <input type="radio" ng-model="taskSee" value="All" />All
+</div>
+
+<div class="nav-buttons mobShowNav">
+    <a class="navOld" ui-sref='old' class='oldTaskButton'>Old Things</a>
+    <div>
+    <input type="radio" ng-model="taskSee" value="Work" />Work
+    <input type="radio" ng-model="taskSee" value="Home" />Home
+    </div>
+    <div>
+    <input type="radio" ng-model="taskSee" value="Play" />Play
+    <input type="radio" ng-model="taskSee" value="All" />All
+    </div>
 </div>
 
 <div class='main-list'>
@@ -34,20 +46,23 @@
       <td class="icon-column" ><button class="addButton fa fa-plus-square-o" ng-click="addtask()"></button></td>
     </tr>
     <tr ng-repeat="task in tasks"  ng-show="(showtask(task.timein, task.done, task.type)) && (task.priority === 'High')">
-      <td class="tableName"> {{task.name}} </td>
-      <td> {{task.type}} </td>
+      <td class="tableName mobHide"> {{task.name}} </td>
+      <td colspan="2" class="tableName mobShow"> {{task.name}} </td>
+      <td class="mobHide"> {{task.type}} </td>
       <td> {{task.priority}} </td>
       <td task-complete></td>
     </tr>
     <tr ng-repeat="task in tasks"  ng-show="(showtask(task.timein, task.done, task.type)) && (task.priority === 'Med')">
-      <td class="tableName"> {{task.name}} </td>
-      <td> {{task.type}} </td>
+      <td class="tableName mobHide"> {{task.name}} </td>
+      <td colspan="2" class="tableName mobShow"> {{task.name}} </td>
+      <td class="mobHide"> {{task.type}} </td>
       <td> {{task.priority}} </td>
       <td task-complete></td>
     </tr>
     <tr ng-repeat="task in tasks"  ng-show="(showtask(task.timein, task.done, task.type)) && (task.priority === 'Low')">
-      <td class="tableName"> {{task.name}} </td>
-      <td> {{task.type}} </td>
+      <td class="tableName mobHide"> {{task.name}} </td>
+      <td colspan="2" class="tableName mobShow"> {{task.name}} </td>
+      <td class="mobHide"> {{task.type}} </td>
       <td> {{task.priority}} </td>
       <td task-complete></td>
     </tr>
@@ -64,3 +79,5 @@
       <input type="image" src="images/cssfour.png" alt="Light"></button>
   </span>
 </div>
+
+<div>Change User</div>

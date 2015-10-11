@@ -37,6 +37,13 @@ margin: 15px 0px 10px 0px;
     cursor:pointer;
   }
 }
+/* hide mobile adjustments */
+.mobShow{
+  display: none;
+}
+.mobShowNav{
+  display: none;
+}
 
 .cssOption {
   width: 80%;
@@ -109,17 +116,29 @@ margin: 15px 0px 10px 0px;
   h1 {
     font-size: 2em;
   }
+  .mobShowNav {
+     display: block;
+  }
   .nav-buttons{
-       width: 90%;
+       width: 90%;      
     a {
-      display: block;
+      float: left;
       font-size: 1.2em;
-      padding: .8% 20%;
+      /* padding: .8% 20%; */
+      width: 25%;
     }
     input[type = 'radio'] {
       margin: .6em .3em;
     }
   }
+
+  .mobShow {
+    display: table-cell;
+  }
+  .mobHide {
+    display: none;
+  }
+
   .main-list {
     .col-title {
       font-size: .9em;
