@@ -100,13 +100,15 @@ doThings.controller('doController', function($scope, $firebaseArray, $firebaseOb
 
   $scope.showtask = function(taskTime, taskDone, taskType) {
     var oneWeekAgo = new Date()
-      .getTime() - 1000 * 60 * 60 * 24 * 7,
+      .getTime() - 1000 * 60 * 60 * 24 * 7, //one week
       oneDayAgo = new Date()
-      .getTime() - 1000 * 60 * 60 * 24, //for testing
+      .getTime() - 1000 * 60 * 60 * 24, //one day - for testing
       oneHourAgo = new Date()
-      .getTime() - 1000 * 60 * 60; //for testing
+      .getTime() - 1000 * 60 * 60; //one hour - for testing
+      oneYearAgo = new Date()
+      .getTime() - 1000 * 60 * 60 * 24 * 365; //one year - for demo app so tasks visible up for viewing
 
-    if ((oneWeekAgo < taskTime) 
+    if ((oneYearAgo < taskTime) 
       && (taskDone !== 'Yes!') 
       && ((taskType == $scope.taskSee) || ($scope.taskSee == 'All')))
       return true
